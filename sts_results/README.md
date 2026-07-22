@@ -100,25 +100,25 @@ Dataset is found in:
 
 ### WGAN-GP Architecture
 
-    - *Generator*: 3 dense layers with BatchNorm and ReLU, output dimension = 9
+    - **Generator**: 3 dense layers with BatchNorm and ReLU, output dimension = 9
 
-    - *Critic (Discriminator)*: 3 dense layers with SpectralNorm and LeakyReLU (0.2)
+    - **Critic (Discriminator)**: 3 dense layers with SpectralNorm and LeakyReLU (0.2)
 
-    - *Latent Space*: z ∈ ℝ³² sampled from standard normal distribution
+    - **Latent Space**: z ∈ ℝ³² sampled from standard normal distribution
 
-    - *Optimizer*: Adam (lr=1e-4, β₁=0.5, β₂=0.9)
+    - **Optimizer**: Adam (lr=1e-4, β₁=0.5, β₂=0.9)
 
-    - *Gradient Penalty*: λ = 10
+    - **Gradient Penalty**: λ = 10
 
-    - *Critic Updates*: 5 per generator update
+    - **Critic Updates**: 5 per generator update
 
-    - *Batch Size*: 16
+    - **Batch Size**: 16
 
-    - *Total Epochs*: 4500
+    - **Total Epochs**: 4500
 
 ###  Evaluation Metrics
 
-- Univariate Statistical Fidelity
+- **Univariate Statistical Fidelity**
 
     - EMD (Earth Mover's Distance)
 
@@ -128,13 +128,13 @@ Dataset is found in:
 
     - KS (Kolmogorov-Smirnov Statistic)
 
-- Multivariate Statistical Fidelity
+- **Multivariate Statistical Fidelity**
 
     MMD (Maximum Mean Discrepancy)
 
     Energy Distance
 
-- Structural Preservation
+- **Structural Preservation**
 
     - Frobenius Difference
 
@@ -144,7 +144,7 @@ Dataset is found in:
 
     - MI (Mutual Information) Difference
 
-- Visual Validation
+- **Visual Validation**
 
     - KDE (Kernel Density Estimation) plots
 
@@ -212,16 +212,17 @@ yaml
   - target_epochs: [400, 2000, 4500]
 
 ## Results Summary
+---
 
 ### Key Findings
 
-    Best Overall Performance: C2 (Log1p+MinMax) achieved the best MMD (0.056) and Energy Distance (11.75)
+- **Best Overall Performance**: C2 (Log1p+MinMax) achieved the best MMD (0.056) and Energy Distance (11.75)
 
-    Best Structural Preservation: C4 (QuantileTransformer+MinMax) achieved the best Frobenius Difference (0.503) and MACE (0.035)
+- **Best Structural Preservation**: C4 (QuantileTransformer+MinMax) achieved the best Frobenius Difference (0.503) and MACE (0.035)
 
-    Most Consistent: C4 showed the lowest inter-run variability (MMD IQR = 0.008)
+- **Most Consistent**: C4 showed the lowest inter-run variability (MMD IQR = 0.008)
 
-    Training Stability: C4 demonstrated the most stable adversarial balance (G_loss = -2.339)
+- **Training Stability**: C4 demonstrated the most stable adversarial balance (G_loss = -2.339)
 
 ### Ranking
 
@@ -244,6 +245,7 @@ yaml
 |Figure E|	Temporal Dynamics (G_loss, D_loss, EMD)|	figureE_temporal_dynamics.png|
 
 #### Utility Scripts
+---
 ```bash
 scripts/utils.py
 ``` 
@@ -257,6 +259,8 @@ Contains helper functions for:
     - File I/O operations
 
     - Configuration management
+    
+--- 
 
 ```bash 
 scripts/run.py
@@ -284,3 +288,4 @@ If you use this code in your research, please cite:
   year={2026}
 }
 ```  
+
