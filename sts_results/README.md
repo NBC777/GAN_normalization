@@ -8,7 +8,7 @@
 
 ##  Overview
 
-This repository contains the implementation and analysis code for our study on the impact of normalization strategies on Wasserstein GAN with Gradient Penalty (WGAN-GP) for generating synthetic radiometric data. We systematically evaluate four normalization approaches—ranging from linear scaling to non-linear transformations—applied to a dataset of radionuclide concentrations and radiological indices.
+This repository contains the implementation and analysis code for our study on the impact of normalization strategies on Wasserstein GAN with Gradient Penalty (WGAN-GP) for generating synthetic radiometric data. We systematically evaluate four normalization approaches, ranging from linear scaling to non-linear transformations, applied to a dataset of radionuclide concentrations and radiological indices.
 
 **Our main contributions are threefold:**
 
