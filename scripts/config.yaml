@@ -1,0 +1,50 @@
+# ============
+# CONFIGURAÇÃO YAML
+# ============
+config_yaml = """
+# config.yaml - Arquivo de configuração para análise GAN
+project:
+  name: "GAN_Synthetic_Data_Analysis"
+  version: "1.0.0"
+
+paths:
+  folder_project: "/path/to/project/"
+  folder_datas: "Datas/"
+  folder_metrics: "metrics_results/"
+  folder_synth: "synthetic_data/"
+  folder_data_denorm: "data_denorm/"
+  folder_sts_results: "sts_results/"
+
+data:
+  numerical_columns:
+    - '226Ra'
+    - '232Th'
+    - '40K'
+    - 'Raeq'
+    - 'Theq'
+    - 'Keq'
+    - 'IG'
+    - 'IA'
+    - 'IB'
+  conditions: [1, 2, 3, 4]
+  runs: [0, 1, 2, 3, 4, 5, 6]
+  epochs: [400, 800, 1200, 1600, 2000, 2400, 2800, 3200, 3600, 4000, 4400, 4500]
+  target_epochs: [400, 2000, 4500]
+  n_samples: 109
+  n_features: 9
+
+analysis:
+  metrics:
+    univariate: true
+    multivariate: true
+    structure: true
+    coverage: true
+  plotting:
+    save_figures: true
+    figure_format: "png"
+    dpi: 300
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(levelname)s - %(message)s"
+"""
